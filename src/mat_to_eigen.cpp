@@ -9,7 +9,8 @@ MatToEigen::MatToEigen()
 
 MatToEigen::~MatToEigen()
 {
-    mxDestroyArray(p_array);
+    if(NULL != p_array)
+        mxDestroyArray(p_array);
     // DO NOT call free(data). Doing that would cause core dump.
 }
 
