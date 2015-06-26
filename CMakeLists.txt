@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3 FATAL_ERROR)
 project(mat_to_eigen_matrix)
-# convert matlab data in .mat file to Eigen Matrix in C/C++
+# convert Matlab data in .mat files to Eigen::Matrix format in C/C++
 # Zekun 2015-06
 
 # C++ 11 is needed for some special types
@@ -15,11 +15,9 @@ include_directories(
 
 # MATLAB libraries
 link_directories(
-  lib
   /usr/local/lib
   /usr/lib
   /usr/local/MATLAB/R2015a/bin/glnxa64
-  /usr/local/MATLAB/R2015a/extern/lib
   /usr/local/MATLAB/R2015a/sys/os/glnxa64
 )
 
