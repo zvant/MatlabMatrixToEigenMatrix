@@ -1,5 +1,5 @@
 # MatlabMatrixToEigenMatrix
-Read matrix data from a regular Matlab .mat file and fill data in a Eigen::Matrix structure.
+Transport data between .mat file and Eigen::Matrix object.
+<br>
+Sample code are provided. Please test and report bugs.
 
-## TODO
-Write Eigen::Matrix to .mat file.
