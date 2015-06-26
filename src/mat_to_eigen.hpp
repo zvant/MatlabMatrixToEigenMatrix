@@ -1,16 +1,7 @@
 #ifndef MAT_TO_EIGEN_HPP
 #define MAT_TO_EIGEN_HPP
 
-#include <iostream>
-#include <vector>
-#include <cstddef>
-#include <cstdint>
-#include <cinttypes>
-
-#include "mat.h"
-#include "mex.h"
-#include "matrix.h"
-#include <eigen3/Eigen/Dense>
+#include "mat_eigen_common.h"
 
 /**
  * Read data from .mat file. Then fill data into Eigen::Matrix
@@ -127,20 +118,5 @@ Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> & MatToEigen::toMatrix(Eigen::M
     }
     return matrix;
 }
-
-#define CLASS_ID_IS_NUMERIC(class_id) \
-( \
-    (class_id) == mxCHAR_CLASS || \
-    (class_id) == mxINT8_CLASS || \
-    (class_id) == mxINT16_CLASS || \
-    (class_id) == mxINT32_CLASS || \
-    (class_id) == mxINT64_CLASS || \
-    (class_id) == mxUINT8_CLASS || \
-    (class_id) == mxUINT16_CLASS || \
-    (class_id) == mxUINT32_CLASS || \
-    (class_id) == mxUINT64_CLASS || \
-    (class_id) == mxSINGLE_CLASS || \
-    (class_id) == mxDOUBLE_CLASS \
-)
 
 #endif // MAT_TO_EIGEN_HPP

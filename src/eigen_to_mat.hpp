@@ -1,16 +1,7 @@
 #ifndef EIGEN_TO_MAT_HPP
 #define EIGEN_TO_MAT_HPP
 
-#include <iostream>
-#include <vector>
-#include <cstddef>
-#include <cstdint>
-#include <cinttypes>
-
-#include "mat.h"
-#include "mex.h"
-#include "matrix.h"
-#include <eigen3/Eigen/Dense>
+#include "mat_eigen_common.h"
 
 /**
  * Write data into .mat file. Data in Eigen::Matrix
