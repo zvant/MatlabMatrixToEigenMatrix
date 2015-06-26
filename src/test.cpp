@@ -19,12 +19,12 @@ int main(int argc, char * argv[])
     // convert to Eigen::Matrix
     Eigen::MatrixXf m1;
     m1 = matrix.toMatrixXf(m1);
-    std::cout << "--BEGEIN--\n" << m1 << "\n---END---\n";
+    std::cout << "--BEGIN--\n" << m1 << "\n---END---\n";
 
     // template way
     Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> m2;
     m2 = matrix.toMatrix(m2);
-    std::cout << "--BEGEIN--\n" << m2 << "\n---END---\n";
+    std::cout << "--BEGIN--\n" << m2 << "\n---END---\n";
 
     return 0;
 }
