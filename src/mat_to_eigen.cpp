@@ -370,7 +370,7 @@ int MatToEigen::getCols() const
  */
 const char * MatToEigen::getName() const
 {
-    if(NULL == p_array || NULL == data)
+    if(NULL == p_array || NULL == data || NULL == name)
     {
         std::cerr << "No data read from file yet." << std::endl;
         return NULL;
