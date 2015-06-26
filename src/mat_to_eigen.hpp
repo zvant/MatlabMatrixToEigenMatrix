@@ -13,6 +13,7 @@
 #include <eigen3/Eigen/Dense>
 
 /**
+ * Read data from .mat file. Then fill data into Eigen::Matrix
  * Note that elements are stored in column-major order in data
  * @brief The MatToEigen class
  */

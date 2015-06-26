@@ -12,6 +12,11 @@
 #include "matrix.h"
 #include <eigen3/Eigen/Dense>
 
+/**
+ * Write data into .mat file. Data in Eigen::Matrix
+ * Note that elements are stored in column-major order in data
+ * @brief The EigenToMat class
+ */
 class EigenToMat
 {
 private:
@@ -29,10 +34,22 @@ public:
     bool openMatFile(const char * file_name);
     bool writeMatFile() const;
 
+    /*
+     * !!!! Use templates with great caution !!!!
+     * Read the comments before using or program might crash
+     */
     template <typename T>
     bool setData(const Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> & matrix, mxClassID class_id);
 };
 
+/**
+ * Copy data in Eigen::Matrix into mxArray
+ * !!!! Make sure typename T matches mxClassID class_id
+ * !!!! PREREQUIRED IMPLEMENTATION !!!!
+ * !!!! T & operator=(const T &);
+ * @brief EigenToMat::setData
+ * @return true if success
+ */
 template <typename T>
 bool EigenToMat::setData(const Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> & matrix, mxClassID class_id)
 {
@@ -65,7 +82,6 @@ bool EigenToMat::setData(const Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> 
             * p_elem = matrix(m, n);
         }
     }
-
     return true;
 }
 

@@ -29,15 +29,7 @@ int main(int argc, char * argv[])
 
     // write a .mat file
     Eigen::Matrix<double, 3, 7> m3;
-    m3.setZero();
-    m3(0, 0) = 1.231;
-    m3(1, 1) = 3.122;
-    m3(2, 2) = -2.123;
-    for(int i = 4; i < 7; i ++)
-    {
-        m3(0, i) = i / 2.5;
-        m3(2, i) = i / 3.0;
-    }
+    m3.setRandom();
     std::cout << "--BEGIN--\n" << m3 << "\n---END---\n";
     EigenToMat mat("new_score");
     mat.openMatFile("new_score.mat");
