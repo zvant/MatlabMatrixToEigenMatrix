@@ -136,7 +136,7 @@ Eigen::MatrixXf & MatToEigen::toMatrixXf(Eigen::MatrixXf & matrix) const
     {
         for(int n = 0; n < cols; n ++)
         {
-            p_elem = (char *)data + (m * cols + n) * size;
+            p_elem = (char *)data + (m + rows * n) * size;
 
             switch(class_id)
             {
@@ -193,7 +193,7 @@ Eigen::MatrixXd & MatToEigen::toMatrixXd(Eigen::MatrixXd & matrix) const
     {
         for(int n = 0; n < cols; n ++)
         {
-            p_elem = (char *)data + (m * cols + n) * size;
+            p_elem = (char *)data + (m + rows * n) * size;
 
             switch(class_id)
             {
@@ -250,7 +250,7 @@ Eigen::MatrixXi & MatToEigen::toMatrixXi(Eigen::MatrixXi & matrix) const
     {
         for(int n = 0; n < cols; n ++)
         {
-            p_elem = (char *)data + (m * cols + n) * size;
+            p_elem = (char *)data + (m + rows * n) * size;
 
             switch(class_id)
             {
@@ -315,7 +315,7 @@ void MatToEigen::showElementsNumeric() const
     {
         for(int n = 0; n < cols; n ++)
         {
-            p_elem = (char *)data + (m * cols + n) * size;
+            p_elem = (char *)data + (m + rows * n) * size;
 
             switch(class_id)
             {

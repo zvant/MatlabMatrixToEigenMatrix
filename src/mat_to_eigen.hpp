@@ -72,7 +72,7 @@ void MatToEigen::showElements() const
     {
         for(int n = 0; n < cols; n ++)
         {
-            p_elem = (char *)data + (m * cols + n) * size;
+            p_elem = (char *)data + (m + rows * n) * size;
             cout << *((T *)p_elem) << ",";
         }
         cout << endl;
@@ -116,7 +116,7 @@ Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> & MatToEigen::toMatrix(Eigen::M
     {
         for(int n = 0; n < cols; n ++)
         {
-            p_elem = (char *)data + (m * cols + n) * size;
+            p_elem = (char *)data + (m + rows * n) * size;
             matrix(m, n) = (T)(*((T *)p_elem));
         }
     }
