@@ -26,10 +26,12 @@ private:
     size_t cols;
     size_t size; // size of each element
     MATFile * p_mat;
+
 public:
     EigenToMat(const char * name_str = "anonymous");
     ~EigenToMat();
 
+    void setName(const char * name_str);
     bool clearData();
     bool openMatFile(const char * file_name);
     bool closeMatFile();

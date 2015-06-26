@@ -21,6 +21,15 @@ EigenToMat::~EigenToMat()
 }
 
 /**
+ * @brief EigenToMat::setName
+ * @param name_str
+ */
+void EigenToMat::setName(const char *name_str)
+{
+    name = name_str;
+}
+
+/**
  * Clear mxArray
  * @brief EigenToMat::clearData
  * @return true if cleared
