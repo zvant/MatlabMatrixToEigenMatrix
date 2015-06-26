@@ -16,11 +16,8 @@ EigenToMat::EigenToMat(const char * name_str)
  */
 EigenToMat::~EigenToMat()
 {
-    if(NULL != p_mat)
-        matClose(p_mat);
-
-    if(NULL != p_array)
-        mxDestroyArray(p_array);
+    clearData();
+    closeMatFile();
 }
 
 /**
@@ -49,6 +46,21 @@ bool EigenToMat::openMatFile(const char * file_name)
         std::cerr << "Cannot open file in write mode" << std::endl;
         return false;
     }
+    return true;
+}
+
+/**
+ * @brief EigenToMat::closeMatFile
+ * @return true if file closed
+ */
+bool EigenToMat::closeMatFile()
+{
+    if(0 != matClose(p_mat))
+    {
+        std::cerr << "Cannot close file" << std::endl;
+        return false;
+    }
+    p_mat = NULL;
     return true;
 }
 

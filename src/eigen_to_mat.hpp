@@ -32,6 +32,7 @@ public:
 
     bool clearData();
     bool openMatFile(const char * file_name);
+    bool closeMatFile();
     bool writeMatFile() const;
 
     /*
