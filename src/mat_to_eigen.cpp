@@ -102,7 +102,7 @@ bool MatToEigen::openMatFile(const char * file_name)
 
 /**
  * If elements in the array have numerical type, convert them into float and fill in the matrix
- * This could cause precision lost
+ * !!!! This could cause precision lost
  * @brief MatToEigen::toMatrixXf
  * @param matrix
  * @return parameter itself
@@ -159,7 +159,7 @@ Eigen::MatrixXf & MatToEigen::toMatrixXf(Eigen::MatrixXf & matrix) const
 
 /**
  * If elements in the array have numerical type, convert them into double and fill in the matrix
- * This could cause precision lost
+ * !!!! This could cause precision lost
  * @brief MatToEigen::toMatrixXd
  * @param matrix
  * @return unchanged matrix if no data or type is invalid
@@ -216,7 +216,7 @@ Eigen::MatrixXd & MatToEigen::toMatrixXd(Eigen::MatrixXd & matrix) const
 
 /**
  * If elements in the array have signed integer type, convert them into int and fill in the matrix
- * This could cause precision lost or overflow
+ * !!!! This could cause precision lost or overflow
  * @brief MatToEigen::toMatrixXi
  * @param matrix
  * @return unchanged matrix if no data or type is invalid
