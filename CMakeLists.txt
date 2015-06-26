@@ -21,16 +21,9 @@ link_directories(
   /usr/local/MATLAB/R2015a/sys/os/glnxa64
 )
 
-add_library(mat_to_eigen SHARED src/mat_to_eigen.cpp)
+add_library(mat_eigen SHARED src/mat_to_eigen.cpp src/eigen_to_mat.cpp)
 target_link_libraries(
-  mat_to_eigen
-  mat mx mwfl mwi18n
-  stdc++ m
-)
-
-add_library(eigen_to_mat SHARED src/eigen_to_mat.cpp)
-target_link_libraries(
-  eigen_to_mat
+  mat_eigen
   mat mx mwfl mwi18n
   stdc++ m
 )
@@ -38,7 +31,7 @@ target_link_libraries(
 add_executable(test src/test.cpp)
 target_link_libraries(
   test
-  mat_to_eigen
+  mat_eigen
   mat mx mwfl mwi18n
   stdc++ m
 )

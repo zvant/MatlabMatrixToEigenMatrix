@@ -20,7 +20,7 @@ class MatToEigen
 {
 private:
     const char * name; // name of array
-    mxArray * p_array; // list of arrays
+    mxArray * p_array;
     void * data; // data in array
 
 public:
