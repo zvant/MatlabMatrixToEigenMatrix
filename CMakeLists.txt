@@ -28,6 +28,13 @@ target_link_libraries(
   stdc++ m
 )
 
+add_library(eigen_to_mat SHARED src/eigen_to_mat.cpp)
+target_link_libraries(
+  eigen_to_mat
+  mat mx mwfl mwi18n
+  stdc++ m
+)
+
 add_executable(test src/test.cpp)
 target_link_libraries(
   test

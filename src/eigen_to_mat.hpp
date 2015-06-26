@@ -4,7 +4,6 @@
 class EigenToMat
 {
 private:
-    ;
 public:
     EigenToMat();
 };
