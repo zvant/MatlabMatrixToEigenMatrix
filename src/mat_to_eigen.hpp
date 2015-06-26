@@ -12,6 +12,10 @@
 #include "matrix.h"
 #include <eigen3/Eigen/Dense>
 
+/**
+ * Note that elements are stored in column-major order in data
+ * @brief The MatToEigen class
+ */
 class MatToEigen
 {
 private:
