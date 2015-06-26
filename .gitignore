@@ -1,8 +1,10 @@
 #
 *~
-CMakeFiles
+CMakeFiles/
+CMakeCache.txt
 *.user
 *.cmake
+Makefile
 
 # Compiled Object files
 *.slo
