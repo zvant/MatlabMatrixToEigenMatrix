@@ -1,6 +1,7 @@
 #
 *~
 CMakeFiles/
+CMakeLists.txt
 CMakeCache.txt
 *.user
 *.cmake
