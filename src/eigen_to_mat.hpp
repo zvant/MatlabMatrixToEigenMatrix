@@ -38,9 +38,9 @@ public:
 
 /**
  * Copy data in Eigen::Matrix into mxArray
- * !!!! Make sure typename T matches mxClassID class_id
- * !!!! PREREQUIRED IMPLEMENTATION !!!!
- * !!!! T & operator=(const T &);
+ * @remark Make sure typename T matches mxClassID class_id
+ * @remark PREREQUIRED IMPLEMENTATION <br>
+ * T & operator=(const T &);
  * @brief EigenToMat::setData
  * @return true if success
  */
