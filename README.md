@@ -18,3 +18,6 @@ Then edit the CMakeLists.txt to specify your own Matlab path.
 `cmake ..`
 
 `make`
+
+## Doxygen generated documentation
+http://zvant.github.io/MatlabMatrixToEigenMatrix
