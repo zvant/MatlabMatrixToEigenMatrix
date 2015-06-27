@@ -8,6 +8,10 @@ CMakeCache.txt
 Makefile
 build/*
 
+# Doxygen
+doc/html/
+doc/latex/
+
 # Compiled Object files
 *.slo
 *.lo
