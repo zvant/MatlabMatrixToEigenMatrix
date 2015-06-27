@@ -301,6 +301,7 @@ void MatToEigen::showElementsNumeric() const
     using std::cout;
     using std::endl;
     using std::cerr;
+    using std::ios_base;
 
     if(NULL == p_array || NULL == data)
     {
@@ -322,17 +323,17 @@ void MatToEigen::showElementsNumeric() const
 
             switch(class_id)
             {
-                case mxCHAR_CLASS: cout << *((char *)p_elem) << ","; break;
-                case mxINT8_CLASS: cout << *((int8_t *)p_elem) << ","; break;
-                case mxINT16_CLASS: cout << *((int16_t *)p_elem) << ","; break;
-                case mxINT32_CLASS: cout << *((int32_t *)p_elem) << ","; break;
-                case mxINT64_CLASS: cout << *((int64_t *)p_elem) << ","; break;
-                case mxUINT8_CLASS: cout << *((uint8_t *)p_elem) << ","; break;
-                case mxUINT16_CLASS: cout << *((uint16_t *)p_elem) << ","; break;
-                case mxUINT32_CLASS: cout << *((uint32_t *)p_elem) << ","; break;
-                case mxUINT64_CLASS: cout << *((uint64_t *)p_elem) << ","; break;
-                case mxSINGLE_CLASS: cout << *((float *)p_elem) << ","; break;
-                case mxDOUBLE_CLASS: cout << *((double *)p_elem) << ","; break;
+                case mxCHAR_CLASS: cout.width(2); cout << *((char *)p_elem) << ","; break;
+                case mxINT8_CLASS: cout.width(5); cout << *((int8_t *)p_elem) << ","; break;
+                case mxINT16_CLASS: cout.width(7); cout << *((int16_t *)p_elem) << ","; break;
+                case mxINT32_CLASS: cout.width(12); cout << *((int32_t *)p_elem) << ","; break;
+                case mxINT64_CLASS: cout.width(12); cout << *((int64_t *)p_elem) << ","; break;
+                case mxUINT8_CLASS: cout.width(5); cout << *((uint8_t *)p_elem) << ","; break;
+                case mxUINT16_CLASS: cout.width(7); cout << *((uint16_t *)p_elem) << ","; break;
+                case mxUINT32_CLASS: cout.width(12); cout << *((uint32_t *)p_elem) << ","; break;
+                case mxUINT64_CLASS: cout.width(12); cout << *((uint64_t *)p_elem) << ","; break;
+                case mxSINGLE_CLASS: cout.width(8); cout << *((float *)p_elem) << ","; break;
+                case mxDOUBLE_CLASS: cout.width(11); cout << *((double *)p_elem) << ","; break;
                 default: cout << "Elements type not supported" << endl; return;
             }
         }
