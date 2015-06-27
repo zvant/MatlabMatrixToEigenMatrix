@@ -6,16 +6,18 @@
 /**
  * Write data into .mat file. Data in Eigen::Matrix
  * Note that elements are stored in column-major order in data
- * @brief The EigenToMat class
+ * @brief Write Eigen::Matrix objects to Matlab .mat files
  */
 class EigenToMat
 {
 private:
-    const char * name; // name of array
+    /// name of array
+    const char * name;
     mxArray * p_array;
     size_t rows;
     size_t cols;
-    size_t size; // size of each element
+    size_t size;
+    /// file pointer to the output file
     MATFile * p_mat;
 
 public:

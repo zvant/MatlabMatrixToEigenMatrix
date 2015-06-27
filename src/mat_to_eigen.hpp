@@ -4,16 +4,19 @@
 #include "mat_eigen_common.h"
 
 /**
- * Read data from .mat file. Then fill data into Eigen::Matrix
- * Note that elements are stored in column-major order in data
- * @brief The MatToEigen class
+ * Read data from .mat file. Then fill data into Eigen::Matrix.
+ * Note that elements are stored in column-major order in .mat file data.
+ * @brief Matlab .mat files to Eigen::Matrix templates
  */
 class MatToEigen
 {
 private:
-    const char * name; // name of array
+    /// name of array
+    const char * name;
+    /// pointer to data
     mxArray * p_array;
-    void * data; // data in array
+    /// data in array
+    void * data;
 
 public:
     MatToEigen();
@@ -43,8 +46,8 @@ public:
 
 /**
  * Print elements in the array in matrix form
- * !!!! PREREQUIRED IMPLEMENTATION !!!!
- * !!!! std::ostream & operator<<(std::ostream &, const T &);
+ * @remark PREREQUIRED IMPLEMENTATION<br>
+ * std::ostream & operator<<(std::ostream &, const T &);
  */
 template <typename T>
 void MatToEigen::showElements() const
@@ -77,12 +80,11 @@ void MatToEigen::showElements() const
 
 /**
  * Convert elements in the array into specified type and fill in the matrix
- * !!!! Unpreditable things could happen if types do not match
- * !!!! PREREQUIRED IMPLEMENTATION !!!!
- * !!!! T & operator=(const T &);
+ * @remark Unpreditable things could happen if types do not match
+ * @remark PREREQUIRED IMPLEMENTATION<br>
+ * T & operator=(const T &);
  * @brief MatToEigen::toMatrix
  * @param matrix
- * @return parameter itself
  */
 template <typename T>
 Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> & MatToEigen::toMatrix(Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> & matrix) const

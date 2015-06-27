@@ -7,6 +7,10 @@ MatToEigen::MatToEigen()
     data = NULL;
 }
 
+/**
+ * Release memory
+ * @brief MatToEigen::~MatToEigen
+ */
 MatToEigen::~MatToEigen()
 {
     if(NULL != p_array)
@@ -17,7 +21,7 @@ MatToEigen::~MatToEigen()
 /**
  * Clear data and free memery
  * @brief MatToEigen::clearData
- * @return true if everything goes well
+ * @return true if memory freed
  */
 bool MatToEigen::clearData()
 {
@@ -34,7 +38,7 @@ bool MatToEigen::clearData()
  * Open .mat file and read the first array
  * @brief MatToEigen::openMatFile
  * @param file_name
- * @return true if everything goes well
+ * @return true if file opened in read-only mode
  */
 bool MatToEigen::openMatFile(const char * file_name)
 {
@@ -103,10 +107,9 @@ bool MatToEigen::openMatFile(const char * file_name)
 
 /**
  * If elements in the array have numerical type, convert them into float and fill in the matrix
- * !!!! This could cause precision lost
+ * @remark This could cause precision lost
  * @brief MatToEigen::toMatrixXf
  * @param matrix
- * @return parameter itself
  */
 Eigen::MatrixXf & MatToEigen::toMatrixXf(Eigen::MatrixXf & matrix) const
 {
@@ -160,10 +163,10 @@ Eigen::MatrixXf & MatToEigen::toMatrixXf(Eigen::MatrixXf & matrix) const
 
 /**
  * If elements in the array have numerical type, convert them into double and fill in the matrix
- * !!!! This could cause precision lost
+ * @remark This could cause precision lost
  * @brief MatToEigen::toMatrixXd
  * @param matrix
- * @return unchanged matrix if no data or type is invalid
+ * @return unchanged matrix if there is no data or type is invalid
  */
 Eigen::MatrixXd & MatToEigen::toMatrixXd(Eigen::MatrixXd & matrix) const
 {
@@ -217,10 +220,10 @@ Eigen::MatrixXd & MatToEigen::toMatrixXd(Eigen::MatrixXd & matrix) const
 
 /**
  * If elements in the array have signed integer type, convert them into int and fill in the matrix
- * !!!! This could cause precision lost or overflow
+ * @remark This could cause precision lost or overflow
  * @brief MatToEigen::toMatrixXi
  * @param matrix
- * @return unchanged matrix if no data or type is invalid
+ * @return unchanged matrix if there is no data or type is invalid
  */
 Eigen::MatrixXi & MatToEigen::toMatrixXi(Eigen::MatrixXi & matrix) const
 {
@@ -338,6 +341,7 @@ void MatToEigen::showElementsNumeric() const
 }
 
 /**
+ * Rows of the array
  * @brief MatToEigen::getRows
  * @return 0 if there is no data
  */
@@ -352,6 +356,7 @@ int MatToEigen::getRows() const
 }
 
 /**
+ * Columns of the array
  * @brief MatToEigen::getCols
  * @return 0 if there is no data
  */
@@ -366,6 +371,7 @@ int MatToEigen::getCols() const
 }
 
 /**
+ * Name of the array
  * @brief MatToEigen::getName
  * @return NULL if there is no data
  */

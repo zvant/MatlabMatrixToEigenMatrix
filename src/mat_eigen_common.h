@@ -11,6 +11,7 @@
 #include "matrix.h"
 #include <eigen3/Eigen/Dense>
 
+/// Check if the class_id is a numeric type
 #define CLASS_ID_IS_NUMERIC(class_id) \
 ( \
     (class_id) == mxCHAR_CLASS || \

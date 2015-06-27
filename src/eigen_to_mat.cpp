@@ -1,5 +1,10 @@
 #include "eigen_to_mat.hpp"
 
+/**
+ * If no name specified, construct with "anonymous"
+ * @brief EigenToMat::EigenToMat
+ * @param name_str
+ */
 EigenToMat::EigenToMat(const char * name_str)
 {
     name = name_str;
@@ -21,6 +26,7 @@ EigenToMat::~EigenToMat()
 }
 
 /**
+ * Set name of the array
  * @brief EigenToMat::setName
  * @param name_str
  */
@@ -44,6 +50,7 @@ bool EigenToMat::clearData()
 }
 
 /**
+ * Open the output file
  * @brief EigenToMat::openMatFile
  * @param file_name
  * @return true if file opened in write mode
@@ -59,6 +66,7 @@ bool EigenToMat::openMatFile(const char * file_name)
 }
 
 /**
+ * Close the output file
  * @brief EigenToMat::closeMatFile
  * @return true if file closed
  */
