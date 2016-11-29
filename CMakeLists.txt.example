@@ -5,20 +5,23 @@ project(mat_to_eigen_matrix)
 
 # C++ 11 is needed for some special types
 add_definitions(
-  -std=c++11
+  -Wall -std=c++11 -O2
 )
+
+# MATLAB root path
+SET(MATLAB_ROOT /usr/local/MATLAB/R2015a)
 
 # MATLAB C/C++ headers
 include_directories(
-  /usr/local/MATLAB/R2015a/extern/include
+  ${MATLAB_ROOT}/extern/include
 )
 
 # MATLAB libraries
 link_directories(
   /usr/local/lib
   /usr/lib
-  /usr/local/MATLAB/R2015a/bin/glnxa64
-  /usr/local/MATLAB/R2015a/sys/os/glnxa64
+  ${MATLAB_ROOT}/bin/glnxa64
+  ${MATLAB_ROOT}/sys/os/glnxa64
 )
 
 add_library(mat_eigen SHARED src/mat_to_eigen.cpp src/eigen_to_mat.cpp)
